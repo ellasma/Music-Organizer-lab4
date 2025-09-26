@@ -97,7 +97,23 @@ public class MusicOrganizer
             player.startPlaying(filename);
         }
     }
-
+    
+    public void listMatching(String searchString)
+    {
+        boolean found = false;
+        
+        for (String filename : files) {
+            if (filename.contains(searchString)){
+                System.out.println(filename);
+                found = true;
+            }
+        }
+        
+        if (!found){
+            System.out.println("No matches found.");
+        }
+    }
+    
     /**
      * Stop the player.
      */
